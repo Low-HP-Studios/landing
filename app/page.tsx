@@ -1,77 +1,96 @@
+import type { CSSProperties } from "react";
+
+import BrandBar from "../components/BrandBar";
+
+const stagger = (index: number, base = 0.12, offset = 0): CSSProperties =>
+  ({
+    "--delay": `${offset + index * base}s`,
+  } as CSSProperties);
+
+const rainbowDelay = (delay: number): CSSProperties =>
+  ({
+    "--rainbow-delay": `${delay}s`,
+  } as CSSProperties);
+
+const RainbowText = ({ text, delay }: { text: string; delay: number }) => (
+  <span className="rainbow-stack" style={rainbowDelay(delay)}>
+    <span className="rainbow-base">{text}</span>
+    <span className="rainbow-glow" aria-hidden="true">
+      {text}
+    </span>
+  </span>
+);
+
 export default function Home() {
   return (
-    <main className="relative min-h-screen md:h-screen flex items-center justify-center px-6 py-12 md:py-0">
-      <div className="w-full max-w-6xl grid gap-12 md:grid-cols-2 items-center">
-        <section className="space-y-6 anim-rise" style={{ animationDelay: "0.05s" }}>
-          <div className="space-y-3">
-            <h1
-              className="font-logo font-medium text-6xl sm:text-7xl md:text-8xl leading-none tracking-tight text-text-primary anim-rise"
-              style={{ animationDelay: "0.1s" }}
-            >
-              lowhp
-            </h1>
-            <p
-              className="text-text-secondary text-lg sm:text-xl anim-fade"
-              style={{ animationDelay: "0.2s" }}
-            >
-              Low HP Studios builds developer-friendly career tools that blend
-              visual editing, AI intelligence, and code-level control.
-            </p>
-          </div>
-          <div
-            className="pt-6 border-t border-surface-border anim-fade"
-            style={{ animationDelay: "0.3s" }}
+    <main className="relative min-h-screen md:h-screen px-6 py-10 md:py-0 flex items-center">
+      <div className="w-full max-w-6xl mx-auto space-y-12">
+        <div className="reveal" style={stagger(0, 0.18)}>
+          <BrandBar />
+        </div>
+
+        <section className="space-y-6">
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl font-semibold text-text-primary tracking-tight reveal"
+            style={stagger(1, 0.18)}
           >
-            <p className="text-text-muted text-sm uppercase tracking-[0.3em]">
-              Studio
-            </p>
-            <p className="text-text-primary text-lg font-medium">
-              Professional core, playful edge.
-            </p>
-          </div>
+            <RainbowText text="Developer-friendly" delay={0} /> career tools for
+            a more expressive professional identity.
+          </h1>
+          <p
+            className="text-text-secondary text-lg sm:text-xl max-w-2xl reveal reveal-color"
+            style={stagger(2, 0.18)}
+          >
+            Low HP Studios builds products that blend visual editing, AI
+            intelligence, and code-level control for modern creators.
+          </p>
         </section>
 
-        <section className="space-y-8 anim-rise" style={{ animationDelay: "0.15s" }}>
-          <div className="space-y-3">
-            <p className="text-text-muted text-sm uppercase tracking-[0.3em]">
+        <div className="grid gap-6 md:grid-cols-2">
+          <article className="panel reveal" style={stagger(3, 0.18)}>
+            <p className="text-text-muted text-xs uppercase tracking-[0.4em]">
+              Studio
+            </p>
+            <h2 className="mt-3 text-2xl sm:text-3xl font-semibold text-text-primary">
+              <RainbowText text="Professional core, playful edge." delay={4} />
+            </h2>
+            <p className="mt-4 text-text-secondary text-base sm:text-lg">
+              We design lean, opinionated tools that feel intentional, flexible,
+              and distinctly human.
+            </p>
+          </article>
+
+          <article className="panel reveal" style={stagger(4, 0.18)}>
+            <p className="text-text-muted text-xs uppercase tracking-[0.4em]">
               Product
             </p>
-            <h2 className="text-4xl sm:text-5xl font-semibold text-text-primary anim-fade">
-              Loadout
-            </h2>
-            <p className="text-text-secondary text-lg sm:text-xl anim-fade">
+            <div className="mt-3 flex items-center justify-between gap-4">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-text-primary">
+                <RainbowText text="Loadout" delay={8} />
+              </h2>
+              <span className="text-text-muted text-sm uppercase tracking-[0.3em]">
+                Coming soon
+              </span>
+            </div>
+            <p className="mt-4 text-text-secondary text-base sm:text-lg">
               A Career Operating System that helps you structure, version, and
               sync your professional identity.
             </p>
-          </div>
-
-          <ul className="space-y-3 text-text-secondary">
-            {[
-              "Structured profiles built for clarity",
-              "Versioned resumes for every role",
-              "Synced updates across resume, site, and letters",
-              "Adaptable identity as your career evolves",
-            ].map((item, index) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 anim-fade"
-                style={{ animationDelay: `${0.25 + index * 0.08}s` }}
-              >
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent anim-pulse" />
-                <span className="text-base sm:text-lg">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div
-            className="pt-6 border-t border-surface-border anim-fade"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <p className="text-text-primary text-lg">
-              Building in the open. More soon.
-            </p>
-          </div>
-        </section>
+            <ul className="mt-6 space-y-3 text-text-secondary">
+              {[
+                "Structured profiles built for clarity",
+                "Versioned resumes for every role",
+                "Synced updates across resume, site, and letters",
+                "Adaptable identity as your career evolves",
+              ].map((item, index) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
+                  <span className="text-base sm:text-lg reveal-color">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
       </div>
     </main>
   );

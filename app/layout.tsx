@@ -8,9 +8,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const telma = localFont({
+const chillax = localFont({
   variable: "--font-logo",
-  src: "../assets/fonts/Telma-Bold.woff2",
+  src: "../assets/fonts/Chillax-Semibold.woff2",
   display: "swap",
 });
 
@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${telma.variable} antialiased`}
+        className={`${inter.variable} ${chillax.variable} antialiased`}
       >
         {children}
       </body>
