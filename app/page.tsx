@@ -5,10 +5,10 @@ export default function Home() {
         <section className="space-y-6 anim-rise" style={{ animationDelay: "0.05s" }}>
           <div className="space-y-3">
             <h1
-              className="font-logo text-6xl sm:text-7xl md:text-8xl leading-none tracking-tight text-text-primary anim-rise"
+              className="font-logo font-medium text-6xl sm:text-7xl md:text-8xl leading-none tracking-tight text-text-primary anim-rise"
               style={{ animationDelay: "0.1s" }}
             >
-              Lowhp
+              lowhp
             </h1>
             <p
               className="text-text-secondary text-lg sm:text-xl anim-fade"
