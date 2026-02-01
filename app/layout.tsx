@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Lora } from "next/font/google";
 import "./globals.css";
 
-const chillax = localFont({
+const lora = Lora({
   variable: "--font-logo",
-  src: "../assets/fonts/Chillax-Semibold.woff2",
+  subsets: ["latin"],
+  weight: ["600"],
   display: "swap",
 });
 
@@ -53,6 +54,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Low HP" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -60,7 +67,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`${chillax.variable} antialiased overflow-x-hidden`}>
+      <body className={`${lora.variable} antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>

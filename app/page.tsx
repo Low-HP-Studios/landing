@@ -38,7 +38,7 @@ export default function Home() {
             a more expressive professional identity.
           </h1>
           <p
-            className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto md:mx-0 reveal reveal-color"
+            className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto md:mx-0 reveal reveal-color leading-[1.2]"
             style={stagger(2, 0.18)}
           >
             Low HP Studios builds products that blend visual editing, AI
