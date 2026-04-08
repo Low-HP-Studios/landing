@@ -23,4 +23,4 @@ Open [http://localhost:3000](http://localhost:3000) and you're good.
 
 ---
 
-Building in the open. First product (Loadout) coming soon.
+Building in the open. First product (Greytrace) coming soon currently in alpha.
