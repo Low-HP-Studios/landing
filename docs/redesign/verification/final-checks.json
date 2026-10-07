@@ -1,0 +1,41 @@
+{
+  "testedAt": "2026-10-07T16:03:49.869Z",
+  "skipFocus": "main",
+  "keyboardGames": 2,
+  "webCount": 1,
+  "mobileOverflow": false,
+  "mobileAxe": [],
+  "images": [
+    {
+      "src": "/brand/logo.svg",
+      "loaded": true
+    },
+    {
+      "src": "/projects/burnhop.webp",
+      "loaded": true
+    },
+    {
+      "src": "/projects/burnhop.webp",
+      "loaded": true
+    },
+    {
+      "src": "/projects/greytrace.webp",
+      "loaded": true
+    },
+    {
+      "src": "/projects/templio.webp",
+      "loaded": true
+    },
+    {
+      "src": "/studio/ayush.webp",
+      "loaded": true
+    }
+  ],
+  "metadata": {
+    "canonical": "https://www.lowhp.studio/",
+    "og": "https://www.lowhp.studio/social-preview.png",
+    "manifests": 1,
+    "oldFavicons": 0
+  },
+  "pageErrors": []
+}

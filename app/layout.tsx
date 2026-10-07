@@ -1,75 +1,62 @@
 import type { Metadata, Viewport } from "next";
-import { Lora } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
-
-const lora = Lora({
-  variable: "--font-logo",
+const geist = Geist({
   subsets: ["latin"],
-  weight: ["600"],
+  variable: "--font-geist",
   display: "swap",
 });
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
+  themeColor: "#f2f2ef",
 };
-
 export const metadata: Metadata = {
-  title: "Low HP Studios | Developer-Friendly Career Tools",
+  metadataBase: new URL("https://www.lowhp.studio"),
+  title: "Low HP Studio — Independent games & crafted websites",
   description:
-    "Building developer-friendly career tools that combine visual editing, AI intelligence, and code-level control.",
-  keywords: [
-    "resume builder",
-    "career tools",
-    "developer",
-    "AI resume",
-    "portfolio",
-  ],
-  authors: [{ name: "Low HP Studios" }],
+    "A small independent studio by Ayush Rameja. Explore Burnhop, Greytrace, and Templio: games to play and carefully made corners of the web.",
+  authors: [{ name: "Ayush Rameja", url: "https://ayush.im" }],
+  alternates: { canonical: "/" },
   icons: {
     icon: [
-      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
-    apple: [
-      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    title: "Low HP Studio — Low health. High spirit.",
+    description:
+      "Independent games and carefully made websites, built by Ayush Rameja.",
+    type: "website",
+    url: "/",
+    siteName: "Low HP Studio",
+    images: [
+      {
+        url: "/social-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Low HP Studio — Independent games and crafted websites",
+      },
     ],
   },
-  manifest: "/favicon/site.webmanifest",
-  openGraph: {
-    title: "Low HP Studios",
-    description: "Developer-friendly career tools. Building in the open.",
-    type: "website",
+  twitter: {
+    card: "summary_large_image",
+    title: "Low HP Studio — Low health. High spirit.",
+    description:
+      "Independent games and carefully made websites, built by Ayush Rameja.",
+    images: ["/social-preview.png"],
   },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Low HP" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${lora.variable} antialiased overflow-x-hidden`}>
-        {children}
-      </body>
+      <body className={geist.variable}>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,36 @@
+{
+  "packet_id": "PKT-lowhp-awwwards-20261007",
+  "from": "composition-director",
+  "to": "designly-director",
+  "job": "Implement an Awwwards-inspired studio website with verified Low HP content.",
+  "decisions": [
+    {
+      "key": "composition_state",
+      "value": {
+        "state": "implemented_and_locally_reviewed",
+        "grid": "Centered maximum 1600px content area; 40px desktop gutters; three-column project grid; one-column mobile grid with 18px gutters.",
+        "primary_anchor": "Oversized centered LOW HP. masthead in the first viewport.",
+        "secondary_anchor": "Genuine Burnhop capture below the introduction, centered at maximum 1136px width.",
+        "tertiary_anchors": "Compact project metadata, studio profile, founder credit, and contact.",
+        "negative_space": "Approximately one third of the opening composition is reserved as a design target for whitespace; this is not a measured percentage.",
+        "mobile": "Condensed masthead, stacked imagery and project descriptions, always-visible navigation, touch-accessible links.",
+        "motion": "Hover feedback and smooth anchor scrolling, disabled with reduced motion."
+      },
+      "priority": 1
+    }
+  ],
+  "evidence": [
+    "User explicitly rejected the previous Indie Workshop proposal and requested Awwwards.com inspiration.",
+    "Awwwards live homepage inspected on 7 October 2026: large title, featured project image, and project galleries.",
+    "User-confirmed project inclusion and founder credit carried forward.",
+    "Local desktop and mobile screenshots and automated checks in docs/redesign/verification."
+  ],
+  "confidence": 0.9,
+  "hard_vetoes": [
+    {"rule": "Use genuine project assets and accurate availability labels.", "reason": "Studio claims must be supported by the actual projects.", "severity": "hard_gate"},
+    {"rule": "Do not imply awards, registered marks, funding, or Awwwards affiliation.", "reason": "No such claims have been verified.", "severity": "hard_gate"}
+  ],
+  "soft_warnings": ["Automated accessibility checks do not replace a full manual audit."],
+  "unresolved": ["Contact email verification and canonical domain confirmation belong to the infrastructure owner.", "User visual review remains pending."],
+  "recommended_next": ["Review the local static preview.", "After approval, have the infrastructure owner build and publish out/ through the separately authorized deployment process."]
+}
