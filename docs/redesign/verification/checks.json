@@ -1,0 +1,93 @@
+{
+  "desktopAxe": [],
+  "gamesCount": 2,
+  "webNames": [
+    "Templio (opens in a new tab)"
+  ],
+  "allCount": 3,
+  "firstFocus": "Skip to content",
+  "skipTarget": "#main",
+  "sizes": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": []
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "overflow": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": []
+    }
+  ],
+  "mobileAxe": [],
+  "reducedMotion": {
+    "scroll": "auto",
+    "transition": "0s"
+  },
+  "assets": [
+    {
+      "path": "/site.webmanifest",
+      "status": 200
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200
+    },
+    {
+      "path": "/favicon-96x96.png",
+      "status": 200
+    },
+    {
+      "path": "/apple-touch-icon.png",
+      "status": 200
+    },
+    {
+      "path": "/brand/logo.svg",
+      "status": 200
+    },
+    {
+      "path": "/projects/burnhop.webp",
+      "status": 200
+    },
+    {
+      "path": "/projects/greytrace.webp",
+      "status": 200
+    },
+    {
+      "path": "/projects/templio.webp",
+      "status": 200
+    },
+    {
+      "path": "/studio/ayush.webp",
+      "status": 200
+    },
+    {
+      "path": "/social-preview.png",
+      "status": 200
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,31 @@
+{
+  "packet_id": "PKT-lowhp-redesign-20261007",
+  "from": "creative-strategy",
+  "to": "designly-director",
+  "job": "Research the studio positioning and recommend content and visual direction before website implementation.",
+  "decisions": [
+    {"key": "strategy_state", "value": "researched_direction_proposed", "rationale": "Project inclusion and founder credit are user-confirmed; the visual treatment is a recommendation.", "priority": 1},
+    {"key": "primary_message", "value": "Low HP Studio makes independent games and carefully made websites.", "rationale": "Fits the verified Burnhop and Greytrace games and the current Templio offer.", "priority": 1},
+    {"key": "desired_action", "value": "Explore an actual project, then learn about its founder or make contact.", "priority": 2},
+    {"key": "visual_territory", "value": "Indie Workshop", "rationale": "Warm editorial clarity accommodates distinct project artwork and a playful studio identity.", "priority": 3},
+    {"key": "project_scope", "value": ["Burnhop", "Greytrace", "Templio"], "rationale": "Explicitly confirmed by the user; Loadout excluded.", "priority": 1}
+  ],
+  "evidence": [
+    "User confirmed three studio projects, Loadout exclusion, and Ayush Rameja as founder and developer.",
+    "User confirmed Templio positioning should follow its live custom-websites offer.",
+    "https://github.com/ayushrameja/burnhop documents current solo-only live availability.",
+    "https://github.com/Low-HP-Studios/greytrace identifies a browser tactical-shooting prototype.",
+    "https://www.templio.app/ presents collaboratively built custom websites.",
+    "https://panic.com/ clearly presents several distinct product categories under one studio.",
+    "https://www.supergiantgames.com/ presents named projects, descriptions, platform information, and direct links."
+  ],
+  "confidence": 0.9,
+  "hard_vetoes": [
+    {"rule": "Use only substantiated product capabilities and genuine assets.", "reason": "The brief requires accurate evidence of studio work.", "severity": "hard_gate"},
+    {"rule": "Do not advertise Burnhop multiplayer as currently available.", "reason": "Current public project documentation says it is disabled.", "severity": "hard_gate"},
+    {"rule": "Keep hosting, DNS, email configuration, and deployment outside scope.", "reason": "A separate infrastructure agent owns those actions.", "severity": "hard_gate"}
+  ],
+  "soft_warnings": ["Templio README and GitHub organization bio lag the current positioning.", "A successful URL response or lobby capture does not establish full game playability."],
+  "unresolved": ["Infrastructure verification of ayush@lowhp.studio.", "Final canonical hostname.", "User preference on proposed visual direction."],
+  "recommended_next": ["Use this research to implement a focused static studio page in an isolated worktree.", "Capture final project imagery and verify production export, accessibility, layouts, and links."]
+}

@@ -1,118 +1,251 @@
-import type { CSSProperties } from "react";
-
+import Image from "next/image";
 import BrandBar from "../components/BrandBar";
-
-const stagger = (index: number, base = 0.12, offset = 0): CSSProperties =>
-  ({
-    "--delay": `${offset + index * base}s`,
-  } as CSSProperties);
-
-const rainbowDelay = (delay: number): CSSProperties =>
-  ({
-    "--rainbow-delay": `${delay}s`,
-  } as CSSProperties);
-
-const RainbowText = ({ text, delay }: { text: string; delay: number }) => (
-  <span className="rainbow-stack" style={rainbowDelay(delay)}>
-    <span className="rainbow-base">{text}</span>
-    <span className="rainbow-glow" aria-hidden="true">
-      {text}
-    </span>
-  </span>
-);
+import ProjectGallery from "../components/ProjectGallery";
+import { ArrowUpRight, ArrowDown } from "../components/Icons";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-full min-h-screen px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16 flex flex-col justify-center">
-      <div className="w-full max-w-6xl mx-auto flex flex-col gap-8 sm:gap-10 md:gap-14 lg:gap-16">
-        <div className="reveal text-center md:text-left w-full" style={stagger(0, 0.18)}>
-          <BrandBar />
-        </div>
-
-        <section className="w-full flex flex-col gap-5 sm:gap-6 md:gap-8 text-center md:text-left">
-          <h1
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-text-primary tracking-tight leading-tight lg:leading-snug reveal"
-            style={stagger(1, 0.18)}
-          >
-            <RainbowText text="Developer-friendly" delay={0} /> career tools for
-            a more expressive professional identity.
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <BrandBar />
+      <main id="main" tabIndex={-1}>
+        <section className="hero shell" aria-labelledby="hero-title">
+          <div className="hero-eyebrow">
+            <span className="status-dot" /> Independent games &amp; web
+            experiences
+          </div>
+          <h1 id="hero-title">
+            LOW HP<span className="hero-period">.</span>
           </h1>
-          <p
-            className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto md:mx-0 reveal reveal-color leading-[1.2]"
-            style={stagger(2, 0.18)}
-          >
-            Low HP Studios builds products that blend visual editing, AI
-            intelligence, and code-level control for modern creators.
-          </p>
-        </section>
-
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <article
-            className="panel panel--studio reveal text-center md:text-left w-full"
-            style={stagger(3, 0.18)}
-          >
-            <p className="text-text-muted text-xs uppercase tracking-[0.4em]">
-              Studio
-            </p>
-            <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary">
-              <RainbowText text="Professional core, playful edge." delay={4} />
-            </h2>
-            <p className="mt-4 text-text-secondary text-sm sm:text-base md:text-lg">
-              We design lean, opinionated tools that feel intentional, flexible,
-              and distinctly human.
-            </p>
-          </article>
-
-          <article
-            className="panel panel--product reveal text-center md:text-left w-full"
-            style={stagger(4, 0.18)}
-          >
-            <p className="text-text-muted text-xs uppercase tracking-[0.4em]">
-              Product
-            </p>
-            <div className="mt-3 flex flex-col sm:flex-row items-center justify-center md:justify-between gap-2 sm:gap-4">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-text-primary">
-                <RainbowText text="Loadout" delay={8} />
-              </h2>
-              <span className="text-text-muted text-xs sm:text-sm uppercase tracking-[0.3em]">
-                Coming soon
+          <div className="hero-bottom">
+            <div className="health-signature">
+              <span className="health-bars" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+              </span>
+              <span>
+                Low health.
+                <br /> High spirit.
               </span>
             </div>
-            <p className="mt-4 text-text-secondary text-sm sm:text-base md:text-lg">
-              A Career Operating System that helps you structure, version, and
-              sync your professional identity.
+            <p>
+              A small studio with a thing for
+              <br className="desktop-break" /> games, good websites, and{" "}
+              <em>what if?</em>
             </p>
-            <div className="mt-5 sm:mt-6 flex flex-col gap-2.5 sm:gap-3 text-left">
-              {[
-                "Structured profiles built for clarity",
-                "Versioned resumes for every role",
-                "Synced updates across resume, site, and letters",
-                "Adaptable identity as your career evolves",
-              ].map((item) => (
-                <div key={item} className="feature-item">
-                  <svg
-                    className="feature-arrow"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                  <span className="text-sm sm:text-base md:text-lg text-text-secondary">
-                    {item}
-                  </span>
-                </div>
-              ))}
+            <a
+              className="round-link"
+              href="#projects"
+              aria-label="Explore our projects"
+            >
+              <ArrowDown />
+            </a>
+          </div>
+        </section>
+        <section className="featured shell" aria-labelledby="featured-title">
+          <a
+            className="featured-visual"
+            href="https://burnhop.lowhp.studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explore Burnhop, a solo practice browser prototype (opens in a new tab)"
+          >
+            <div className="image-topline">
+              <span>In the spotlight</span>
+              <span>01 / 03</span>
             </div>
-          </article>
+            <div className="featured-image">
+              <Image
+                src="/projects/burnhop.webp"
+                alt="Burnhop’s illustrated pilot at the entrance to a moonlit desert shooting game"
+                width={1280}
+                height={800}
+                priority
+                sizes="(max-width: 700px) 100vw, 90vw"
+              />
+            </div>
+            <span className="image-action">
+              <ArrowUpRight />
+            </span>
+          </a>
+          <div className="featured-caption">
+            <div>
+              <p className="eyebrow">Featured project / Game</p>
+              <h2 id="featured-title">Burnhop</h2>
+            </div>
+            <p>
+              Jet boots. Tiny pilots. Questionable decisions.
+              <br />A side-view shooting prototype with a lot of personality.
+            </p>
+            <span className="outline-tag">Solo practice · Browser</span>
+          </div>
+        </section>
+        <ProjectGallery />
+        <section
+          id="studio"
+          className="studio-section"
+          aria-labelledby="studio-title"
+        >
+          <div className="shell studio-layout">
+            <div className="studio-label">
+              <span className="eyebrow">The studio</span>
+              <span className="outline-tag dark-tag">Independently built</span>
+            </div>
+            <div className="studio-copy">
+              <h2 id="studio-title">
+                Serious about
+                <br />
+                making things.
+                <br />
+                <span>
+                  Playful about
+                  <br />
+                  everything else.
+                </span>
+              </h2>
+              <div className="studio-paragraphs">
+                <p>
+                  Low HP Studio is where ideas become things you can play,
+                  explore, and make your own. A jet-powered game one day. A
+                  carefully crafted corner of the web the next.
+                </p>
+                <p>
+                  The common thread? Curiosity, a feel for the details, and the
+                  belief that small projects deserve real care.
+                </p>
+              </div>
+              <a
+                className="text-link light-link"
+                href="https://github.com/Low-HP-Studios"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore the studio on GitHub <ArrowUpRight />
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+            <div className="studio-aside" aria-hidden="true">
+              <span className="big-asterisk">✳</span>
+              <p>
+                SMALL STUDIO.
+                <br />
+                KEEP PLAYING.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          id="founder"
+          className="founder-section shell"
+          aria-labelledby="founder-title"
+        >
+          <div className="founder-heading">
+            <p className="eyebrow">Behind the studio</p>
+            <h2 id="founder-title">
+              The person
+              <br />
+              behind
+              <br />
+              the pixels.
+            </h2>
+          </div>
+          <div className="founder-card">
+            <div className="portrait">
+              <Image
+                src="/studio/ayush.webp"
+                alt="Illustrated portrait of Ayush Rameja, from his personal website"
+                width={1200}
+                height={400}
+                sizes="(max-width: 700px) 100vw, 42vw"
+              />
+            </div>
+            <div className="founder-card-bottom">
+              <div>
+                <h3>Ayush Rameja</h3>
+                <p>Founder &amp; developer</p>
+              </div>
+              <a
+                className="round-link"
+                href="https://ayush.im"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Ayush Rameja’s portfolio (opens in a new tab)"
+              >
+                <ArrowUpRight />
+              </a>
+            </div>
+            <p className="founder-bio">
+              I build the games and websites you see here. Low HP is the home
+              for that work: a place to experiment, learn by making, and keep
+              following the interesting ideas.
+            </p>
+          </div>
+        </section>
+        <section
+          id="contact"
+          className="contact-section shell"
+          aria-labelledby="contact-title"
+        >
+          <div className="contact-top">
+            <p className="eyebrow">Good things start with a conversation.</p>
+            <span className="health-bars" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+          </div>
+          <a className="contact-link" href="mailto:ayush@lowhp.studio">
+            <h2 id="contact-title">
+              Say hello<span aria-hidden="true">↗</span>
+            </h2>
+            <span className="contact-address">ayush@lowhp.studio</span>
+          </a>
+          <div className="contact-note">
+            <p>
+              A project, a playtest, or just a good idea.
+              <br />
+              There’s room for a conversation.
+            </p>
+            <a
+              className="text-link"
+              href="https://ayush.im"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Find Ayush online <ArrowUpRight />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </section>
+      </main>
+      <footer className="site-footer shell">
+        <a
+          className="footer-brand"
+          href="#main"
+          aria-label="Low HP Studio, back to top"
+        >
+          lowhp<span aria-hidden="true">✳</span>
+        </a>
+        <p>© {new Date().getFullYear()} Low HP Studio</p>
+        <div>
+          <a
+            href="https://github.com/Low-HP-Studios"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a href="#main">Back to top ↑</a>
         </div>
-      </div>
-    </main>
+      </footer>
+    </>
   );
 }
